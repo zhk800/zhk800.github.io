@@ -1,0 +1,24 @@
+---
+layout: default
+title: 音乐
+permalink: /music/
+---
+<div class="container">
+  <div class="page-header">
+    <h1>音乐</h1>
+    <p>那些陪伴过我的旋律</p>
+  </div>
+
+  <div class="music-grid">
+    {% for track in site.data.music %}
+    <div class="music-card">
+      <img class="music-cover" src="{{ track.cover }}" alt="{{ track.title }}" loading="lazy">
+      <div class="music-info">
+        <div class="music-title">{{ track.title }}</div>
+        <div class="music-artist">{{ track.artist }} · {{ track.album }}</div>
+        <div class="music-note">{{ track.note }}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

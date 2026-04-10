@@ -1,0 +1,31 @@
+---
+layout: default
+title: 摄影
+permalink: /photography/
+---
+<div class="container">
+  <div class="page-header">
+    <h1>摄影</h1>
+    <p>用光影定格时间</p>
+  </div>
+
+  <div class="photo-grid">
+    {% for photo in site.data.photos %}
+    <div class="photo-item" data-src="{{ photo.src }}" data-caption="{{ photo.title }} · {{ photo.location }}">
+      <img src="{{ photo.src }}" alt="{{ photo.title }}" loading="lazy">
+      <div class="photo-overlay">
+        <div class="photo-caption">
+          <div class="photo-title">{{ photo.title }}</div>
+          <div class="photo-location">{{ photo.location }}</div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" aria-label="关闭">&times;</button>
+  <img src="" alt="">
+  <div class="lightbox-caption"></div>
+</div>

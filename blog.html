@@ -1,0 +1,31 @@
+---
+layout: default
+title: 文章
+permalink: /blog/
+---
+<div class="container">
+  <div class="page-header">
+    <h1>文章</h1>
+    <p>记录技术思考与生活感悟</p>
+  </div>
+
+  <div class="category-filter">
+    <button class="active" data-category="all">全部</button>
+    <button data-category="技术">技术</button>
+    <button data-category="思考">思考</button>
+    <button data-category="其他">其他</button>
+  </div>
+
+  <div class="posts-grid">
+    {% for post in site.posts %}
+    <div class="post-card" data-category="{{ post.categories[0] | default: '其他' }}">
+      <div class="post-card-meta">
+        <time>{{ post.date | date: "%Y-%m-%d" }}</time>
+        {% if post.categories[0] %}<span class="post-tag">{{ post.categories[0] }}</span>{% endif %}
+      </div>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>

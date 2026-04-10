@@ -1,3 +1,25 @@
-title: 我的博客
-description: 我的第一个网站
-theme: minima
+title: 张洪凯
+description: 软件工程师 · 摄影爱好者 · 音乐聆听者
+url: "https://zhk800.github.io"
+baseurl: ""
+
+author:
+  name: 张洪凯
+  email: zhk800@example.com
+  github: zhk800
+
+permalink: /blog/:year/:month/:day/:title/
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+  - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .bundle
