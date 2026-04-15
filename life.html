@@ -1,0 +1,39 @@
+---
+layout: default
+title: Life
+permalink: /life/
+---
+<div class="container">
+
+  <section class="life-section">
+    <h2 class="life-section-title">Music</h2>
+    <div class="music-grid">
+      {% for track in site.data.music %}
+      <div class="music-card">
+        <img class="music-cover" src="{{ track.cover }}" alt="{{ track.title }}" loading="lazy">
+        <div class="music-info">
+          <div class="music-title">{{ track.title }}</div>
+          <div class="music-artist">{{ track.artist }} · {{ track.album }}</div>
+          {% if track.note %}<div class="music-note">{{ track.note }}</div>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="life-section">
+    <h2 class="life-section-title">Journey</h2>
+    <div class="journey-grid">
+      {% for journey in site.data.journey %}
+      <article class="journey-card">
+        <img class="journey-cover" src="{{ journey.src }}" alt="{{ journey.title }}" loading="lazy">
+        <div class="journey-info">
+          <div class="journey-title">{{ journey.title }}</div>
+          <div class="journey-location">{{ journey.location }}</div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+</div>

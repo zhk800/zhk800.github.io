@@ -1,31 +1,23 @@
 ---
 layout: default
-title: 摄影
-permalink: /photography/
+title: Journey
+permalink: /journey/
 ---
 <div class="container">
   <div class="page-header">
-    <h1>摄影</h1>
-    <p>用光影定格时间</p>
+    <h1>Journey</h1>
+    <p>用照片记录路上的风景与心情</p>
   </div>
 
-  <div class="photo-grid">
-    {% for photo in site.data.photos %}
-    <div class="photo-item" data-src="{{ photo.src }}" data-caption="{{ photo.title }} · {{ photo.location }}">
-      <img src="{{ photo.src }}" alt="{{ photo.title }}" loading="lazy">
-      <div class="photo-overlay">
-        <div class="photo-caption">
-          <div class="photo-title">{{ photo.title }}</div>
-          <div class="photo-location">{{ photo.location }}</div>
-        </div>
+  <div class="journey-grid">
+    {% for journey in site.data.journey %}
+    <article class="journey-card">
+      <img class="journey-cover" src="{{ journey.src }}" alt="{{ journey.title }}" loading="lazy">
+      <div class="journey-info">
+        <div class="journey-title">{{ journey.title }}</div>
+        <div class="journey-location">{{ journey.location }}</div>
       </div>
-    </div>
+    </article>
     {% endfor %}
   </div>
-</div>
-
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" aria-label="关闭">&times;</button>
-  <img src="" alt="">
-  <div class="lightbox-caption"></div>
 </div>

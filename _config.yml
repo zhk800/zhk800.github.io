@@ -1,12 +1,13 @@
-title: 张洪凯
-description: 软件工程师 · 摄影爱好者 · 音乐聆听者
+title: Hongkai Zhang
+description: Play with th world.
 url: "https://zhk800.github.io"
 baseurl: ""
 
 author:
-  name: 张洪凯
-  email: zhk800@example.com
+  name: Hongkai Zhang
+  email: hongkaiz418@gmail.com
   github: zhk800
+  zhihu: prop-39
 
 permalink: /blog/:year/:month/:day/:title/
 

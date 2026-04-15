@@ -1,179 +1,37 @@
-// Hero section
-.hero {
-  padding: 5rem 0 4rem;
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-
-  .hero-avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid $border;
-    flex-shrink: 0;
-  }
-
-  .hero-avatar-placeholder {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, $accent, $accent-hover);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-    color: white;
-    flex-shrink: 0;
-  }
-
-  .hero-text {
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
-    }
-    .hero-tagline {
-      font-size: 1.1rem;
-      color: $muted;
-      margin-bottom: 1.25rem;
-    }
-  }
-
-  .hero-links {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-
-    a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.45rem 1rem;
-      border: 1.5px solid $border;
-      border-radius: 6px;
-      font-size: 0.875rem;
-      color: $text;
-      transition: all $transition;
-      &:hover {
-        border-color: $accent;
-        color: $accent;
-        background: $tag-bg;
-      }
-    }
-  }
-
-  @media (max-width: 640px) {
-    flex-direction: column;
-    text-align: center;
-    padding: 3rem 0 2rem;
-    gap: 1.5rem;
-    .hero-links { justify-content: center; }
-  }
+// Post tag pill
+.post-tag {
+  background: $tag-bg;
+  color: $tag-color;
+  padding: 0.15em 0.55em;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  font-family: $font-sans;
 }
 
-// Section titles
-.section-title {
-  font-size: 1.4rem;
+// Life page sections
+.life-section {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid $border;
+
+  &:last-child { border-bottom: none; }
+}
+
+.life-section-title {
+  font-size: 0.75rem;
+  font-family: $font-sans;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $muted;
   margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  a {
-    font-size: 0.875rem;
-    font-family: $font-sans;
-    font-weight: 400;
-    color: $muted;
-    &:hover { color: $accent; }
-  }
-}
-
-// Post cards
-.posts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.25rem;
-  margin-bottom: 3rem;
-}
-
-.post-card {
-  background: $card-bg;
-  border: 1px solid $border;
-  border-radius: 10px;
-  padding: 1.5rem;
-  transition: box-shadow $transition, transform $transition;
-
-  &:hover {
-    box-shadow: $shadow-md;
-    transform: translateY(-2px);
-  }
-
-  .post-card-meta {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
-    font-size: 0.8rem;
-    color: $muted;
-  }
-
-  .post-tag {
-    background: $tag-bg;
-    color: $tag-color;
-    padding: 0.15em 0.6em;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 500;
-  }
-
-  h3 {
-    font-size: 1.05rem;
-    margin-bottom: 0.5rem;
-    a { color: $text; &:hover { color: $accent; } }
-  }
-
-  .post-excerpt {
-    font-size: 0.875rem;
-    color: $muted;
-    line-height: 1.6;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-}
-
-// Category filter
-.category-filter {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
-
-  button {
-    padding: 0.4rem 1rem;
-    border: 1.5px solid $border;
-    border-radius: 20px;
-    background: none;
-    cursor: pointer;
-    font-size: 0.875rem;
-    color: $muted;
-    font-family: $font-sans;
-    transition: all $transition;
-
-    &:hover, &.active {
-      border-color: $accent;
-      color: $accent;
-      background: $tag-bg;
-    }
-  }
 }
 
 // Music cards
 .music-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
 }
 
 .music-card {
@@ -196,22 +54,22 @@
   }
 
   .music-info {
-    padding: 1rem;
+    padding: 0.75rem;
 
     .music-title {
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.875rem;
       margin-bottom: 0.2rem;
     }
 
     .music-artist {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: $muted;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.4rem;
     }
 
     .music-note {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: $muted;
       font-style: italic;
       line-height: 1.5;
@@ -219,54 +77,44 @@
   }
 }
 
-// Photography masonry
-.photo-grid {
-  columns: 3;
-  column-gap: 1rem;
-
-  @media (max-width: 900px) { columns: 2; }
-  @media (max-width: 500px) { columns: 1; }
+// Journey cards
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
 }
 
-.photo-item {
-  break-inside: avoid;
-  margin-bottom: 1rem;
-  border-radius: 8px;
+.journey-card {
+  background: $card-bg;
+  border: 1px solid $border;
+  border-radius: 10px;
   overflow: hidden;
-  cursor: pointer;
-  position: relative;
-
-  img {
-    width: 100%;
-    display: block;
-    transition: transform 0.3s ease;
-  }
-
-  .photo-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0);
-    display: flex;
-    align-items: flex-end;
-    padding: 1rem;
-    transition: background 0.3s ease;
-
-    .photo-caption {
-      color: white;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      font-size: 0.875rem;
-
-      .photo-title { font-weight: 600; }
-      .photo-location { font-size: 0.8rem; opacity: 0.8; }
-    }
-  }
+  transition: box-shadow $transition, transform $transition;
 
   &:hover {
-    img { transform: scale(1.03); }
-    .photo-overlay {
-      background: rgba(0,0,0,0.35);
-      .photo-caption { opacity: 1; }
+    box-shadow: $shadow-md;
+    transform: translateY(-2px);
+  }
+
+  .journey-cover {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: #e5e7eb;
+  }
+
+  .journey-info {
+    padding: 0.75rem;
+
+    .journey-title {
+      font-weight: 600;
+      font-size: 0.875rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .journey-location {
+      font-size: 0.75rem;
+      color: $muted;
     }
   }
 }
@@ -316,34 +164,6 @@
   }
 }
 
-// Featured photos strip
-.photos-strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-bottom: 3rem;
-
-  .photo-thumb {
-    border-radius: 8px;
-    overflow: hidden;
-    aspect-ratio: 4/3;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    &:hover img { transform: scale(1.05); }
-  }
-
-  @media (max-width: 640px) {
-    grid-template-columns: repeat(2, 1fr);
-    .photo-thumb:last-child { display: none; }
-  }
-}
-
 // Post layout
 .post-layout {
   max-width: 720px;
@@ -383,9 +203,4 @@
   max-width: 720px;
   margin: 0 auto;
   padding: 2.5rem 1.5rem 4rem;
-}
-
-// Home sections
-.home-section {
-  padding: 2rem 0;
 }

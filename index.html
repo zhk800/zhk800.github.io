@@ -1,57 +1,66 @@
 ---
 layout: default
-title: 首页
+title: Home
 ---
-<div class="container">
-  <section class="hero">
-    <div class="hero-avatar-placeholder">张</div>
-    <div class="hero-text">
-      <h1>张洪凯</h1>
-      <p class="hero-tagline">软件工程师 · 摄影爱好者 · 音乐聆听者</p>
-      <div class="hero-links">
-        <a href="https://github.com/zhk800" target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          GitHub
+<div class="home-layout">
+  <aside class="home-sidebar">
+    <div class="sidebar-profile">
+      <img class="sidebar-avatar" src="/assets/img/avatar.jpg" alt="头像">
+      <h2 class="sidebar-name">{{ site.author.name }}</h2>
+      <p class="sidebar-bio">{{ site.description }}</p>
+      <div class="sidebar-links">
+        {% if site.author.github %}
+        <a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
         </a>
-        <a href="mailto:{{ site.author.email }}">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          邮件联系
+        {% endif %}
+        {% if site.author.zhihu %}
+        <a href="https://www.zhihu.com/people/{{ site.author.zhihu }}" target="_blank" rel="noopener" aria-label="知乎">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.721 0C2.251 0 0 2.25 0 5.719V18.28C0 21.751 2.252 24 5.721 24h12.56C21.751 24 24 21.75 24 18.281V5.72C24 2.249 21.75 0 18.281 0zm1.964 4.078c-.271.73-.5 1.434-.68 2.11h4.587c.545-.006.445 1.168.445 1.171H9.384a58.104 58.104 0 01-.112 3.797h2.712c.388.023.393 1.251.393 1.266H9.183a9.223 9.223 0 01-.408 2.102l.757-.604c.452.456 1.512 1.712 1.906 2.177.473.681.063 2.081.063 2.081l-2.794-3.382c-.653 2.518-1.845 3.607-1.845 3.607-.523.468-1.58.82-2.64.516 2.218-1.73 3.44-3.917 3.667-6.497H4.491c0-.015.197-1.243.806-1.266h2.71c.024-.32.086-3.254.086-3.797H6.598c-.136.406-.158.447-.268.753-.594 1.095-1.603 1.122-1.907 1.155.906-1.821 1.416-3.6 1.591-4.064.425-1.124 1.671-1.125 1.671-1.125zM13.078 6h6.377v11.33h-2.573l-2.184 1.373-.401-1.373h-1.219zm1.313 1.219v8.86h.623l.263.937 1.455-.938h1.456v-8.86z"/></svg>
         </a>
+        {% endif %}
       </div>
     </div>
-  </section>
 
-  <section class="home-section">
-    <h2 class="section-title">
-      最近文章
-      <a href="{{ '/blog' | relative_url }}">查看全部 →</a>
-    </h2>
-    <div class="posts-grid">
-      {% for post in site.posts limit:3 %}
-      <div class="post-card">
-        <div class="post-card-meta">
-          <time>{{ post.date | date: "%Y-%m-%d" }}</time>
-          {% if post.categories[0] %}<span class="post-tag">{{ post.categories[0] }}</span>{% endif %}
-        </div>
-        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 100 }}</p>
+    <div class="sidebar-tags">
+      <h3 class="sidebar-section-title">标签</h3>
+      <div class="tag-list">
+        <button class="tag-btn active" data-tag="all">全部</button>
+        {% assign all_tags = "" | split: "" %}
+        {% for post in site.posts %}
+          {% for tag in post.tags %}
+            {% unless all_tags contains tag %}
+              {% assign all_tags = all_tags | push: tag %}
+            {% endunless %}
+          {% endfor %}
+        {% endfor %}
+        {% for tag in all_tags %}
+        <button class="tag-btn" data-tag="{{ tag }}">{{ tag }}</button>
+        {% endfor %}
       </div>
-      {% endfor %}
     </div>
-  </section>
+  </aside>
 
-  <section class="home-section">
-    <h2 class="section-title">
-      精选摄影
-      <a href="{{ '/photography' | relative_url }}">查看全部 →</a>
-    </h2>
-    <div class="photos-strip">
-      {% assign featured = site.data.photos | where: "featured", true %}
-      {% for photo in featured limit:3 %}
-      <a href="{{ '/photography' | relative_url }}" class="photo-thumb">
-        <img src="{{ photo.src }}" alt="{{ photo.title }}" loading="lazy">
+  <main class="home-posts">
+    {% for post in site.posts %}
+    <article class="post-row" data-tags="{{ post.tags | join: ',' }}">
+      {% if post.image %}
+      <a href="{{ post.url | relative_url }}" class="post-row-thumb">
+        <img src="{{ post.image }}" alt="{{ post.title }}" loading="lazy">
       </a>
-      {% endfor %}
-    </div>
-  </section>
+      {% endif %}
+      <div class="post-row-body">
+        <div class="post-row-meta">
+          <time>{{ post.date | date: "%Y · %m · %d" }}</time>
+          {% for tag in post.tags %}
+          <span class="post-tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        <h2 class="post-row-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        {% if post.subtitle %}<p class="post-row-subtitle">{{ post.subtitle }}</p>{% endif %}
+        <p class="post-row-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </main>
 </div>
